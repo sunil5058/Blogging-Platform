@@ -8,8 +8,21 @@ The application enables users to create, manage, and interact with blog content 
 - https://github.com/sunil5058/Blogging-Platform.git
 
 
-#Login Crediantial
+# Login Crediantial
+- User1
+Email :apple@gmail.com
+Password :apple@123
+- User2
+Email :banana@gmail.com
+Password :banana@123
 
+- User3
+Email :cherry@gmail.com
+Password :cherry@123
+
+- User4
+Email :aalu@gmail.com
+Password :aalu@123
 
 
 ## Features

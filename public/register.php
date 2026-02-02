@@ -35,7 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $stmt->execute([$username, $email, $hashed_password]);
                 
                 $success = "Registration successful! You can now login.";
+                header("Location: index.php");
+
             }
+            
         } catch(PDOException $e) {
             $error = "Error: " . $e->getMessage();
         }

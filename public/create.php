@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $content = '';
                 
                 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                header("Location: myPosts.php");
             } catch(PDOException $e) {
                 $error = "Error: " . $e->getMessage();
             }
