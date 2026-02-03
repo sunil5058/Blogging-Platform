@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $post['content'] = $content;
                 
                 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+                 header('Location: myPosts.php');
             } catch(PDOException $e) {
                 $error = "Error: " . $e->getMessage();
             }
@@ -65,11 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php require '../includes/header.php';?>
-    <div class="navbar">
-        <h2>Blog CMS</h2>
-        <div>
-            <a href="dashboard.php" class="btn-nav">Dashboard</a>
-            <a href="logout.php" class="btn-logout">Logout</a>
+     <div class="navbar">
+        <div class="navbar-inner">
+            <h2>BlogCMS</h2>
+            <div class="navbar-right">
+                <a href="dashboard.php" class="btn">Dashboard</a>
+                <a href="logout.php" class="btn-logout">Logout</a>
+            </div>
         </div>
     </div>
     
@@ -106,29 +109,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" class="btn">Update Post</button>
             <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
         </form>
+       
     </div>
     
-    <script>
-        function validatePost() {
-            var title = document.getElementById('title').value;
-            var content = document.getElementById('content').value;
-            var valid = true;
-            
-            document.getElementById('title-error').innerHTML = '';
-            document.getElementById('content-error').innerHTML = '';
-            
-            if (title.length < 5) {
-                document.getElementById('title-error').innerHTML = 'Title must be at least 5 characters';
-                valid = false;
-            }
-            
-            if (content.length < 20) {
-                document.getElementById('content-error').innerHTML = 'Content must be at least 20 characters';
-                valid = false;
-            }
-            
-            return valid;
-        }
-    </script>
+    <script src="../assets/js/update.js"></script>
 </body>
 </html>

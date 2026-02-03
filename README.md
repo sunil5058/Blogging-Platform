@@ -25,6 +25,21 @@ Email :aalu@gmail.com
 Password :aalu@123
 
 
+
+
+## Setup Instructions
+
+1. Install XAMPP and start Apache & MySQL.  
+
+2. Copy the project folder into `C:\xampp\htdocs\`.  
+
+3. Open `http://localhost/phpmyadmin`, create a database, and import the `.sql` file.  
+
+4. Update database credentials in `db.php`.  
+
+5. Open `http://localhost/` in the browser.
+
+
 ## Features
 
 ### CRUD Operations
